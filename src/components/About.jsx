@@ -52,7 +52,7 @@ function About() {
             viewport={{ once: true }}
             className="text-4xl md:text-5xl font-bold text-textMain mb-8 tracking-tight"
           >
-            Engineering at the intersection of logic and scale.
+            Building software with curiosity and purpose.
           </motion.h3>
 
           <motion.div 
@@ -63,11 +63,11 @@ function About() {
             className="space-y-6 text-textMuted font-mono text-sm leading-relaxed"
           >
             <p>
-                I'm a Computer Science student who enjoys building software and solving problems through code. I like turning ideas into practical applications while continuously learning new technologies and improving my development skills.
+               I'm currently pursuing a BTech in Computer Science and I enjoy building things that people can actually use. I like working on projects that challenge me, help me learn something new, and solve real problems.
             </p>
-
+            
             <p>
-                Lately, I've been focused on building web applications and software that solve real-world problems. I care about writing clean, reliable code and creating products that are simple to use, perform well, and make a positive impact.
+              These days, I've been spending most of my time building full-stack web applications, exploring AI, and improving my problem-solving skills through DSA. I'm always looking for opportunities to learn, collaborate, and become a better developer.
             </p>
           </motion.div>
         </div>
