@@ -13,9 +13,9 @@ function Contact() {
         
         <div>
           <h2 className="font-mono text-accent mb-2">06. // COMMUNICATION</h2>
-          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain mb-6">Initialize Connection</h3>
+          <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain mb-6">Let's Build Connection?</h3>
           <p className="font-mono text-sm text-textMuted leading-relaxed mb-10 max-w-md">
-            The network is open. Whether it's a project collaboration, open-source discussion, or system inquiry, transmitting a message below will ping my server directly.
+            The network is open. Whether it's a project collaboration, open-source discussion, or system inquiry, transmitting a message below will ping me directly.
           </p>
 
           <div className="flex gap-6">
@@ -52,7 +52,7 @@ function Contact() {
           <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-accent"></div>
 
           <div className="flex flex-col">
-            <label className={`font-mono text-xs mb-2 transition-colors ${focusedInput === 'name' ? 'text-accent' : 'text-textMuted'}`}>&gt; string name;</label>
+            <label className={`font-mono text-xs mb-2 transition-colors ${focusedInput === 'name' ? 'text-accent' : 'text-textMuted'}`}>&gt; your name;</label>
             <input
               type="text"
               name="name"
@@ -64,7 +64,7 @@ function Contact() {
           </div>
 
           <div className="flex flex-col">
-            <label className={`font-mono text-xs mb-2 transition-colors ${focusedInput === 'email' ? 'text-accent' : 'text-textMuted'}`}>&gt; string email;</label>
+            <label className={`font-mono text-xs mb-2 transition-colors ${focusedInput === 'email' ? 'text-accent' : 'text-textMuted'}`}>&gt; your email;</label>
             <input
               type="email"
               name="email"
@@ -76,7 +76,7 @@ function Contact() {
           </div>
 
           <div className="flex flex-col">
-            <label className={`font-mono text-xs mb-2 transition-colors ${focusedInput === 'message' ? 'text-accent' : 'text-textMuted'}`}>&gt; string payload;</label>
+            <label className={`font-mono text-xs mb-2 transition-colors ${focusedInput === 'message' ? 'text-accent' : 'text-textMuted'}`}>&gt; your message;</label>
             <textarea
               name="message"
               rows="4"
