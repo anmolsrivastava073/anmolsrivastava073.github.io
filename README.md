@@ -30,7 +30,7 @@ To run and modify this portfolio locally:
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/Anmol-Srivastava-073/portfolio.git
+   git clone https://github.com/anmolsrivastava073/portfolio.git
    ```
 2. Navigate into the project directory:
    ```bash
