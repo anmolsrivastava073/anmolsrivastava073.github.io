@@ -68,15 +68,11 @@ export const projects = [
     stack: ['React', 'Sustainability', 'Dashboard'],
   },
   {
-    title: 'Spin Roulette',
-    image: '/photos/s2.png',
-    link: 'https://spinroulette.netlify.app',
-    desc: 'Fun roulette game project.',
+    title: 'Personal Portfolio',
+    image: '/photos/s3.png',
+    link: 'https://anmolsrivastava073.github.io/',
+    desc: 'A modern developer portfolio showcasing my projects, technical skills, certifications, experience, and achievements through an interactive, responsive interface with smooth animations and optimized performance.',
+    stack: ['React', 'Tailwind CSS', 'Vite'],
   },
-  {
-    title: 'Flipping A Coin',
-    image: '/photos/a1.png',
-    link: 'https://flippingacoin.netlify.app',
-    desc: 'Coin flipping simulator.',
-  },
+  
 ]
