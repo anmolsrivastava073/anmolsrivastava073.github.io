@@ -63,10 +63,11 @@ function About() {
             className="space-y-6 text-textMuted font-mono text-sm leading-relaxed"
           >
             <p>
-              I am a developer who views software engineering not just as writing syntax, but as solving complex architectural puzzles. Currently pursuing my BTech in Computer Science, my foundation is built on rigorous logic, multivariable calculus, and data structures.
+                I'm a Computer Science student who enjoys building software and solving problems through code. I like turning ideas into practical applications while continuously learning new technologies and improving my development skills.
             </p>
+
             <p>
-              I’ve recently been focused on developing web applications and software systems that solve meaningful real-world problems, with particular attention to performance, scalability, and user experience.
+                Lately, I've been focused on building web applications and software that solve real-world problems. I care about writing clean, reliable code and creating products that are simple to use, perform well, and make a positive impact.
             </p>
           </motion.div>
         </div>
