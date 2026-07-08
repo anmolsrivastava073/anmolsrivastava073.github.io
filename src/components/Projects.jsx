@@ -36,7 +36,7 @@ function ProjectCard({ project, index }) {
         />
       </div>
 
-      <div className="flex-grow flex flex-col justify-between z-10">
+      <div className="flex-grow flex flex-col justify-between items-center text-center z-10">
         <div>
           <h4 className="font-bold text-2xl text-textMain mb-4">{project.title}</h4>
           <p className="text-textMuted text-sm leading-relaxed mb-6 font-mono">
@@ -44,9 +44,9 @@ function ProjectCard({ project, index }) {
           </p>
         </div>
         
-        <div>
+        <div className="flex flex-col items-center">
           {project.stack && (
-            <div className="flex flex-wrap gap-2 mb-6">
+            <div className="flex flex-wrap gap-2 mb-6 justify-center">
               {project.stack.map((tech, i) => (
                 <span key={i} className="text-xs font-mono text-textMuted border border-border px-2 py-1 bg-base">
                   {tech}
@@ -74,7 +74,7 @@ function Projects() {
   return (
     <section id="projects" className="py-32 px-6 border-t border-border bg-base">
       <div className="max-w-7xl mx-auto">
-        <div className="flex flex-col md:flex-row justify-between items-end mb-16 gap-6">
+        <div className="flex flex-col items-center text-center mb-16 gap-4">
           <div>
             <h2 className="font-mono text-accent mb-2 tracking-widest text-sm">04. // WORK</h2>
             <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain">Featured Projects</h3>
