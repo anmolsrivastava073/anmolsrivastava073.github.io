@@ -111,12 +111,12 @@ function Contact() {
             ))}
           </div>
 
-          <div className="mt-10 flex justify-center md:justify-start">
-            <div className="border border-border bg-surface px-8 py-5 font-mono text-center">
+          <div className="mt-10 flex w-full justify-center">
+            <div className="border border-gray-700 bg-surface px-8 py-5 font-mono text-center">
               <div className="text-3xl font-bold text-accent">
                 {views}
               </div>
-              <div className="mt-1 text-xs tracking-[0.35em] text-textMuted">
+              <div className="mt-1 text-xs tracking-[0.35em] text-white">
                 PORTFOLIO_VISITS
               </div>
             </div>
