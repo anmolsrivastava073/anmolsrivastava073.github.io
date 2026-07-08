@@ -33,14 +33,14 @@ export const education = [
     location: 'Jaipur, Rajasthan',
     desc: 'Bachelor of Technology in Computer Science Engineering (2025 - 2029)',
     image: '/photos/manipallogo.png',
-    banner: '/photos/mujback.jpg', // Added Banner
+    banner: '/photos/mujback.jpeg', 
   },
   {
     title: 'Maharshi Patanjali Vidya Mandir',
     location: 'Prayagraj, Uttar Pradesh',
     desc: 'Intermediate Education (2018 - 2025)',
     image: '/photos/mpvmlogo.png',
-    banner: '/photos/mpvm.jpg', // Added Banner
+    banner: '/photos/mpvm.jpeg',
   },
 ]
 
@@ -49,13 +49,13 @@ export const experience = [
     title: 'GirlScript Summer of Code 2026',
     role: 'Open Source Contributor',
     image: '/photos/gssoc.png',
-    banner: '/photos/gssocback.png', // Added Banner
+    banner: '/photos/gssocback.png',
   },
   {
     title: 'AWS Cloud Clubs MUJ',
     role: 'Technical Team Member',
     image: '/photos/awstech.png',
-    banner: '/photos/awsback.jpeg', // Added Banner
+    banner: '/photos/awsback.jpeg',
   },
 ]
 
