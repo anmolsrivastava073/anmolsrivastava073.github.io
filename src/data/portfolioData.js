@@ -39,7 +39,7 @@ export const experience = [
     title: 'GirlScript Summer of Code 2026',
     role: 'Open Source Contributor',
     image: '/photos/gssoc.png',
-    banner: '/photos/gssocback.png',
+    banner: 'https://gssoc.girlscript.org/profile/6e70d6b1-7856-4e04-9679-52a12ddab65f/card',
   },
   {
     title: 'AWS Cloud Clubs MUJ',
