@@ -50,7 +50,7 @@ function Experience() {
                     {/* Connection dot */}
                     <div className="hidden md:block absolute -left-[51px] top-8 w-2 h-2 bg-base border border-accent"></div>
                     
-                    <div className="flex flex-col items-center text-center gap-3">
+                    <div className="flex items-start gap-4">
                       <img src={item.image} className="w-10 h-10 object-contain" alt={item.title} />
                       <div>
                         <h3 className="font-bold text-lg text-textMain">{item.title}</h3>
@@ -76,15 +76,15 @@ function Experience() {
                     className="dev-card bg-surface relative"
                   >
                      {/* Connection dot */}
-                     <div className="hidden md:block absolute -left-[51px] top-8 w-2 h-2 bg-base border border-textMuted"></div>
-
-                    <div className="flex flex-col items-center text-center gap-4">
-                      <img src={item.image} className="w-10 h-10 bg-white object-contain p-1" alt={item.title} />
-                      <div>
-                        <h3 className="font-bold text-lg text-textMain">{item.title}</h3>
-                        <p className="font-mono text-textMuted text-sm mt-1">{item.location}</p>
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                      <div className="flex items-start gap-4">
+                        <img src={item.image} className="w-10 h-10 bg-white object-contain p-1" alt={item.title} />
+                        <div>
+                          <h3 className="font-bold text-lg text-textMain">{item.title}</h3>
+                          <p className="font-mono text-textMuted text-sm mt-1">{item.location}</p>
+                        </div>
                       </div>
-                      <p className="font-mono text-xs text-textMuted max-w-xs hidden md:block">
+                      <p className="font-mono text-xs text-textMuted max-w-xs text-right hidden md:block">
                         {item.desc}
                       </p>
                     </div>
