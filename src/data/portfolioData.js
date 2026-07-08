@@ -17,18 +17,30 @@ export const skills = [
   }
 ]
 
+To add these images as low-transparency background banners, you will need to update your data file to include the new image paths and modify the Experience component to render them as background layers behind your text.
+
+First, ensure you move the images (awsback.jpeg, gssocback.png, mpvm.jpg, mujback.jpg) into your public/photos/ directory.
+
+1. Update src/data/portfolioData.js
+Add the banner property to your education and experience arrays so the component knows which image belongs to which card.
+
+JavaScript
+// src/data/portfolioData.js
+
 export const education = [
   {
     title: 'Manipal University Jaipur',
     location: 'Jaipur, Rajasthan',
     desc: 'Bachelor of Technology in Computer Science Engineering (2025 - 2029)',
     image: '/photos/manipallogo.png',
+    banner: '/photos/mujback.jpg', // Added Banner
   },
   {
     title: 'Maharshi Patanjali Vidya Mandir',
     location: 'Prayagraj, Uttar Pradesh',
     desc: 'Intermediate Education (2018 - 2025)',
     image: '/photos/mpvmlogo.png',
+    banner: '/photos/mpvm.jpg', // Added Banner
   },
 ]
 
@@ -37,11 +49,13 @@ export const experience = [
     title: 'GirlScript Summer of Code 2026',
     role: 'Open Source Contributor',
     image: '/photos/gssoc.png',
+    banner: '/photos/gssocback.png', // Added Banner
   },
   {
     title: 'AWS Cloud Clubs MUJ',
     role: 'Technical Team Member',
     image: '/photos/awstech.png',
+    banner: '/photos/awsback.jpeg', // Added Banner
   },
 ]
 
