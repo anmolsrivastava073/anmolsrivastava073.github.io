@@ -82,7 +82,7 @@ function Contact() {
           </h2>
 
           <h3 className="text-4xl md:text-5xl font-bold tracking-tight text-textMain mb-6">
-            Let's Build Connection?
+            Let's Build a Connection?
           </h3>
 
           <p className="font-mono text-sm text-textMuted leading-relaxed mb-10 max-w-md">
