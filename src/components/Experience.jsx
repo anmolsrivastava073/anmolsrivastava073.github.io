@@ -1,4 +1,3 @@
-// src/components/Experience.jsx
 import { useRef } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import { experience, education } from '../data/portfolioData'
@@ -46,7 +45,8 @@ function Experience() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-50px" }}
-                    className="dev-card bg-surface relative overflow-hidden group"
+                    // Added fixed height and flex-col for vertical centering
+                    className="dev-card bg-surface relative overflow-hidden group h-[160px] md:h-[180px] flex flex-col justify-center"
                   >
                     {/* Background Banner */}
                     <div 
@@ -55,13 +55,13 @@ function Experience() {
                     />
 
                     {/* Connection dot */}
-                    <div className="hidden md:block absolute -left-[51px] top-8 w-2 h-2 bg-base border border-accent z-10"></div>
+                    <div className="hidden md:block absolute -left-[51px] top-1/2 -translate-y-1/2 w-2 h-2 bg-base border border-accent z-10"></div>
                     
-                    {/* Card Content (z-10 ensures it stays above the banner) */}
-                    <div className="flex items-start gap-4 relative z-10">
-                      <img src={item.image} className="w-10 h-10 object-contain rounded bg-base/50 p-1" alt={item.title} />
+                    {/* Card Content */}
+                    <div className="flex items-center gap-4 relative z-10 w-full">
+                      <img src={item.image} className="w-12 h-12 object-contain rounded bg-base/50 p-1" alt={item.title} />
                       <div>
-                        <h3 className="font-bold text-lg text-textMain">{item.title}</h3>
+                        <h3 className="font-bold text-lg md:text-xl text-textMain">{item.title}</h3>
                         <p className="font-mono text-accent text-sm mt-1">{item.role}</p>
                       </div>
                     </div>
@@ -81,7 +81,8 @@ function Experience() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-50px" }}
-                    className="dev-card bg-surface relative overflow-hidden group"
+                    // Added fixed height and flex-col for vertical centering
+                    className="dev-card bg-surface relative overflow-hidden group h-[160px] md:h-[180px] flex flex-col justify-center"
                   >
                      {/* Background Banner */}
                      <div 
@@ -90,15 +91,15 @@ function Experience() {
                     />
 
                     {/* Card Content */}
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
-                      <div className="flex items-start gap-4">
-                        <img src={item.image} className="w-10 h-10 bg-white/90 object-contain rounded p-1" alt={item.title} />
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
+                      <div className="flex items-center gap-4">
+                        <img src={item.image} className="w-12 h-12 bg-white/90 object-contain rounded p-1" alt={item.title} />
                         <div>
-                          <h3 className="font-bold text-lg text-textMain">{item.title}</h3>
+                          <h3 className="font-bold text-lg md:text-xl text-textMain">{item.title}</h3>
                           <p className="font-mono text-textMuted text-sm mt-1">{item.location}</p>
                         </div>
                       </div>
-                      <p className="font-mono text-xs text-textMuted max-w-xs text-right hidden md:block">
+                      <p className="font-mono text-xs text-textMuted max-w-xs text-left md:text-right hidden md:block">
                         {item.desc}
                       </p>
                     </div>
