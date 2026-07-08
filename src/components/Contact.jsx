@@ -99,7 +99,7 @@ function Contact() {
               { icon: <FaInstagram />, link: "https://instagram.com/anmol_sriv.073" },
               { icon: <SiSubstack />, link: "https://substack.com/@anmolsriv073" },
             ].map((social, i) => (
-              
+              <a
                 key={i}
                 href={social.link}
                 target="_blank"
