@@ -12,7 +12,8 @@ function VisitorCounter() {
       }
 
       try {
-        const apiUrl = "https://your-backend-api.onrender.com/api/views";
+        // Pointing directly to your Supabase Edge Function
+        const apiUrl = "https://vtdbvwaxocxombtqllvm.supabase.co/functions/v1/views";
 
         // 1. Record the current page hit (POST)
         await fetch(apiUrl, {
@@ -24,11 +25,9 @@ function VisitorCounter() {
         });
 
         // 2. Fetch the updated total views for the portfolio (GET)
-        // Adjust the URL if your GET route is different (e.g., /api/views/count)
         const response = await fetch(apiUrl);
         const data = await response.json();
 
-        // Assuming your API returns { count: 123 }
         setViews(data.count);
       } catch (error) {
         console.error("Visitor counter error:", error);
