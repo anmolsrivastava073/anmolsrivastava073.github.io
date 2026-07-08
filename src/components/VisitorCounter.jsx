@@ -4,21 +4,39 @@ function VisitorCounter() {
   const [views, setViews] = useState("...");
 
   useEffect(() => {
-    async function fetchViews() {
-      try {
-        const response = await fetch(
-          "https://anmolsrivastava073.goatcounter.com/counter/TOTAL.json"
-        );
+    async function trackAndFetchViews() {
+      // Prevent counting local development traffic
+      if (window.location.hostname === "localhost") {
+        setViews("DEV");
+        return;
+      }
 
+      try {
+        const apiUrl = "https://your-backend-api.onrender.com/api/views";
+
+        // 1. Record the current page hit (POST)
+        await fetch(apiUrl, {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({ path: window.location.pathname }),
+        });
+
+        // 2. Fetch the updated total views for the portfolio (GET)
+        // Adjust the URL if your GET route is different (e.g., /api/views/count)
+        const response = await fetch(apiUrl);
         const data = await response.json();
 
+        // Assuming your API returns { count: 123 }
         setViews(data.count);
       } catch (error) {
         console.error("Visitor counter error:", error);
+        setViews("---");
       }
     }
 
-    fetchViews();
+    trackAndFetchViews();
   }, []);
 
   return (
