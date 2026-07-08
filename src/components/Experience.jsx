@@ -50,7 +50,7 @@ function Experience() {
                   >
                     {/* Background Banner */}
                     <div 
-                      className="absolute inset-0 bg-cover bg-center opacity-[0.08] group-hover:opacity-[0.15] transition-opacity duration-500 z-0"
+                      className="absolute inset-0 bg-cover bg-center opacity-[0.13] group-hover:opacity-[0.25] transition-opacity duration-500 z-0"
                       style={{ backgroundImage: `url(${item.banner})` }}
                     />
 
