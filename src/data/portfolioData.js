@@ -23,7 +23,7 @@ export const education = [
     location: 'Jaipur, Rajasthan',
     desc: 'Bachelor of Technology in Computer Science Engineering (2025 - 2029)',
     image: '/photos/manipallogo.png',
-    banner: '/photos/mujback.jpeg', 
+    banner: '/photos/mujback.jpeg',
   },
   {
     title: 'Maharshi Patanjali Vidya Mandir',
@@ -39,7 +39,7 @@ export const experience = [
     title: 'GirlScript Summer of Code 2026',
     role: 'Open Source Contributor',
     image: '/photos/gssoc.png',
-    banner: 'https://gssoc.girlscript.org/profile/6e70d6b1-7856-4e04-9679-52a12ddab65f/card',
+    banner: '/photos/gssocback.png',
   },
   {
     title: 'AWS Cloud Clubs MUJ',
@@ -78,5 +78,4 @@ export const projects = [
     desc: 'A modern developer portfolio showcasing my projects, technical skills, certifications, experience, and achievements through an interactive, responsive interface with smooth animations and optimized performance.',
     stack: ['React', 'Tailwind CSS', 'Vite'],
   },
-  
 ]
