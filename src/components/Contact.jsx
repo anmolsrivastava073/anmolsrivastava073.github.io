@@ -76,7 +76,6 @@ function Contact() {
       className="py-32 px-6 border-t border-border bg-base"
     >
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-16">
-        {/* Left Section */}
         <div>
           <h2 className="font-mono text-accent mb-2">
             06. // COMMUNICATION
@@ -94,26 +93,11 @@ function Contact() {
 
           <div className="flex gap-6">
             {[
-              {
-                icon: <FaGithub />,
-                link: "https://github.com/Anmol-Srivastava-073",
-              },
-              {
-                icon: <FaLinkedin />,
-                link: "https://linkedin.com/in/anmol-srivastava-46430727a",
-              },
-              {
-                icon: <FaXTwitter />,
-                link: "https://x.com/anmol_sriv073",
-              },
-              {
-                icon: <FaInstagram />,
-                link: "https://instagram.com/anmol_sriv.073",
-              },
-              {
-                icon: <SiSubstack />,
-                link: "https://substack.com/@anmolsriv073",
-              },
+              { icon: <FaGithub />, link: "https://github.com/Anmol-Srivastava-073" },
+              { icon: <FaLinkedin />, link: "https://linkedin.com/in/anmol-srivastava-46430727a" },
+              { icon: <FaXTwitter />, link: "https://x.com/anmol_sriv073" },
+              { icon: <FaInstagram />, link: "https://instagram.com/anmol_sriv.073" },
+              { icon: <SiSubstack />, link: "https://substack.com/@anmolsriv073" },
             ].map((social, i) => (
               
                 key={i}
@@ -127,7 +111,6 @@ function Contact() {
             ))}
           </div>
 
-          {/* Visitor Counter — moved here into the free space below the socials */}
           <div className="mt-10 inline-flex border border-border bg-surface px-8 py-5 font-mono text-left">
             <div>
               <div className="text-3xl font-bold text-accent">
@@ -140,7 +123,6 @@ function Contact() {
           </div>
         </div>
 
-        {/* Contact Form */}
         <motion.form
           onSubmit={handleSubmit}
           initial={{ opacity: 0, x: 20 }}
@@ -148,17 +130,13 @@ function Contact() {
           viewport={{ once: true }}
           className="bg-surface border border-border p-8 flex flex-col gap-6 relative"
         >
-          {/* Decorative Corner Brackets */}
           <div className="absolute top-0 left-0 w-4 h-4 border-t-2 border-l-2 border-accent"></div>
           <div className="absolute bottom-0 right-0 w-4 h-4 border-b-2 border-r-2 border-accent"></div>
 
-          {/* Name */}
           <div className="flex flex-col">
             <label
               className={`font-mono text-xs mb-2 transition-colors ${
-                focusedInput === "name"
-                  ? "text-accent"
-                  : "text-textMuted"
+                focusedInput === "name" ? "text-accent" : "text-textMuted"
               }`}
             >
               &gt; YOUR NAME
@@ -174,13 +152,10 @@ function Contact() {
             />
           </div>
 
-          {/* Email */}
           <div className="flex flex-col">
             <label
               className={`font-mono text-xs mb-2 transition-colors ${
-                focusedInput === "email"
-                  ? "text-accent"
-                  : "text-textMuted"
+                focusedInput === "email" ? "text-accent" : "text-textMuted"
               }`}
             >
               &gt; YOUR EMAIL
@@ -196,13 +171,10 @@ function Contact() {
             />
           </div>
 
-          {/* Message */}
           <div className="flex flex-col">
             <label
               className={`font-mono text-xs mb-2 transition-colors ${
-                focusedInput === "message"
-                  ? "text-accent"
-                  : "text-textMuted"
+                focusedInput === "message" ? "text-accent" : "text-textMuted"
               }`}
             >
               &gt; YOUR MESSAGE
@@ -218,7 +190,6 @@ function Contact() {
             />
           </div>
 
-          {/* Submit Button */}
           <button
             type="submit"
             disabled={loading}
@@ -227,7 +198,6 @@ function Contact() {
             {loading ? "[ SENDING... ]" : "[ POST_REQUEST ]"}
           </button>
 
-          {/* Success Message */}
           {submitted && (
             <motion.div
               initial={{ opacity: 0, y: 10 }}
