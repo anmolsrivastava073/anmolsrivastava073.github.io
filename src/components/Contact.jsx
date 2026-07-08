@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub, FaLinkedin, FaInstagram } from 'react-icons/fa'
 import { FaXTwitter } from 'react-icons/fa6'
@@ -8,6 +8,36 @@ function Contact() {
   const [focusedInput, setFocusedInput] = useState(null)
   const [loading, setLoading] = useState(false)
   const [submitted, setSubmitted] = useState(false)
+  const [views, setViews] = useState("...")
+
+  useEffect(() => {
+    async function trackAndFetchViews() {
+      if (window.location.hostname === "localhost") {
+        setViews("DEV")
+        return
+      }
+
+      try {
+        const apiUrl = "https://vtdbvwaxocxombtqllvm.supabase.co/functions/v1/views"
+
+        await fetch(apiUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ path: window.location.pathname }),
+        })
+
+        const response = await fetch(apiUrl)
+        const data = await response.json()
+
+        setViews(data.count)
+      } catch (error) {
+        console.error("Visitor counter error:", error)
+        setViews("---")
+      }
+    }
+
+    trackAndFetchViews()
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -85,7 +115,7 @@ function Contact() {
                 link: "https://substack.com/@anmolsriv073",
               },
             ].map((social, i) => (
-              <a
+              
                 key={i}
                 href={social.link}
                 target="_blank"
@@ -95,6 +125,18 @@ function Contact() {
                 {social.icon}
               </a>
             ))}
+          </div>
+
+          {/* Visitor Counter — moved here into the free space below the socials */}
+          <div className="mt-10 inline-flex border border-border bg-surface px-8 py-5 font-mono text-left">
+            <div>
+              <div className="text-3xl font-bold text-accent">
+                {views}
+              </div>
+              <div className="mt-1 text-xs tracking-[0.35em] text-textMuted">
+                PORTFOLIO_VISITS
+              </div>
+            </div>
           </div>
         </div>
 
