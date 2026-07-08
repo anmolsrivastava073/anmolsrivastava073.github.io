@@ -6,6 +6,7 @@ import Skills from './components/Skills'
 import Experience from './components/Experience'
 import Resume from './components/Resume'
 import Contact from './components/Contact'
+import VisitorCounter from "./components/VisitorCounter";
 import Footer from './components/Footer'
 
 function App() {
@@ -22,6 +23,7 @@ function App() {
           <Projects />
           <Resume />
           <Contact />
+          <VisitorCounter />
         </main>
         <Footer />
       </div>
