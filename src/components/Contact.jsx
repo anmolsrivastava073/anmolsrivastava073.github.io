@@ -111,8 +111,8 @@ function Contact() {
             ))}
           </div>
 
-          <div className="mt-10 inline-flex border border-border bg-surface px-8 py-5 font-mono text-left">
-            <div>
+          <div className="mt-10 flex justify-center md:justify-start">
+            <div className="border border-border bg-surface px-8 py-5 font-mono text-center">
               <div className="text-3xl font-bold text-accent">
                 {views}
               </div>
