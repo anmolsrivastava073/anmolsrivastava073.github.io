@@ -1,3 +1,4 @@
+// src/components/Experience.jsx
 import { useRef } from 'react'
 import { motion, useScroll } from 'framer-motion'
 import { experience, education } from '../data/portfolioData'
@@ -45,13 +46,20 @@ function Experience() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-50px" }}
-                    className="dev-card bg-surface relative"
+                    className="dev-card bg-surface relative overflow-hidden group"
                   >
+                    {/* Background Banner */}
+                    <div 
+                      className="absolute inset-0 bg-cover bg-center opacity-[0.08] group-hover:opacity-[0.15] transition-opacity duration-500 z-0"
+                      style={{ backgroundImage: `url(${item.banner})` }}
+                    />
+
                     {/* Connection dot */}
-                    <div className="hidden md:block absolute -left-[51px] top-8 w-2 h-2 bg-base border border-accent"></div>
+                    <div className="hidden md:block absolute -left-[51px] top-8 w-2 h-2 bg-base border border-accent z-10"></div>
                     
-                    <div className="flex items-start gap-4">
-                      <img src={item.image} className="w-10 h-10 object-contain" alt={item.title} />
+                    {/* Card Content (z-10 ensures it stays above the banner) */}
+                    <div className="flex items-start gap-4 relative z-10">
+                      <img src={item.image} className="w-10 h-10 object-contain rounded bg-base/50 p-1" alt={item.title} />
                       <div>
                         <h3 className="font-bold text-lg text-textMain">{item.title}</h3>
                         <p className="font-mono text-accent text-sm mt-1">{item.role}</p>
@@ -73,12 +81,18 @@ function Experience() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-50px" }}
-                    className="dev-card bg-surface relative"
+                    className="dev-card bg-surface relative overflow-hidden group"
                   >
-                     {/* Connection dot */}
-                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4">
+                     {/* Background Banner */}
+                     <div 
+                      className="absolute inset-0 bg-cover bg-center opacity-[0.08] group-hover:opacity-[0.15] transition-opacity duration-500 z-0"
+                      style={{ backgroundImage: `url(${item.banner})` }}
+                    />
+
+                    {/* Card Content */}
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10">
                       <div className="flex items-start gap-4">
-                        <img src={item.image} className="w-10 h-10 bg-white object-contain p-1" alt={item.title} />
+                        <img src={item.image} className="w-10 h-10 bg-white/90 object-contain rounded p-1" alt={item.title} />
                         <div>
                           <h3 className="font-bold text-lg text-textMain">{item.title}</h3>
                           <p className="font-mono text-textMuted text-sm mt-1">{item.location}</p>
