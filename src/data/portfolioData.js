@@ -38,12 +38,14 @@ export const experience = [
   {
     title: 'GirlScript Summer of Code 2026',
     role: 'Open Source Contributor',
+    desc: 'May 2026 - July 2026',
     image: '/photos/gssoc.png',
     banner: '/photos/gssocback.png',
   },
   {
     title: 'AWS Student Builder Group MUJ',
     role: 'Senior Technical Team Member',
+    desc: 'Feb 2026 - Present',
     image: '/photos/awstech.png',
     banner: '/photos/awsback.jpeg',
   },
