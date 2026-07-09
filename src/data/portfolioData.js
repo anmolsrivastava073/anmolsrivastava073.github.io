@@ -42,8 +42,8 @@ export const experience = [
     banner: '/photos/gssocback.png',
   },
   {
-    title: 'AWS Cloud Clubs MUJ',
-    role: 'Technical Team Member',
+    title: 'AWS Student Builder Group MUJ',
+    role: 'Senior Technical Team Member',
     image: '/photos/awstech.png',
     banner: '/photos/awsback.jpeg',
   },
