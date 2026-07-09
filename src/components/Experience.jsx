@@ -96,10 +96,10 @@ function Experience() {
                     {/* Card Content */}
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
                       <div className="flex items-center gap-4">
-                        <img src={item.image} className="w-12 h-12 bg-white/90 object-contain rounded p-1" alt={item.title} />
+                        <img src={item.image} className="w-12 h-12 object-contain rounded bg-base/50 p-1" alt={item.title} />
                         <div>
                           <h3 className="font-bold text-lg md:text-xl text-textMain">{item.title}</h3>
-                          <p className="font-mono text-textMuted text-sm mt-1">{item.location}</p>
+                          <p className="font-mono text-accent text-sm mt-1">{item.role}</p>
                         </div>
                       </div>
                       <p className="font-mono text-xs text-textMuted max-w-xs text-left md:text-right hidden md:block">
