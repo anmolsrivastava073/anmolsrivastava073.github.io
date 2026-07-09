@@ -64,6 +64,9 @@ function Experience() {
                         <h3 className="font-bold text-lg md:text-xl text-textMain">{item.title}</h3>
                         <p className="font-mono text-accent text-sm mt-1">{item.role}</p>
                       </div>
+                      <p className="font-mono text-xs text-textMuted max-w-xs text-left md:text-right hidden md:block">
+                        {item.desc}
+                      </p>
                     </div>
                   </motion.div>
                 ))}
