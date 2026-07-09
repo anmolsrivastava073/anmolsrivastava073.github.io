@@ -34,6 +34,7 @@ function Experience() {
           </div>
 
           <div className="flex-1 space-y-16">
+            
             {/* Map through Experience */}
             <div>
               <h4 className="font-mono text-textMain border-b border-border pb-4 mb-8 text-center">SUBJECT: EXPERIENCE</h4>
@@ -45,25 +46,27 @@ function Experience() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-50px" }}
-                    // Added fixed height and flex-col for vertical centering
                     className="dev-card bg-surface relative overflow-hidden group h-[160px] md:h-[180px] flex flex-col justify-center"
                   >
                     {/* Background Banner */}
                     <div 
-                      className="absolute inset-0 bg-cover bg-center opacity-[0.13] group-hover:opacity-[0.25] transition-opacity duration-500 z-0"
+                      className="absolute inset-0 bg-cover bg-center opacity-[0.08] group-hover:opacity-[0.15] transition-opacity duration-500 z-0"
                       style={{ backgroundImage: `url(${item.banner})` }}
                     />
 
                     {/* Connection dot */}
                     <div className="hidden md:block absolute -left-[51px] top-1/2 -translate-y-1/2 w-2 h-2 bg-base border border-accent z-10"></div>
                     
-                    {/* Card Content */}
-                    <div className="flex items-center gap-4 relative z-10 w-full">
-                      <img src={item.image} className="w-12 h-12 object-contain rounded bg-base/50 p-1" alt={item.title} />
-                      <div>
-                        <h3 className="font-bold text-lg md:text-xl text-textMain">{item.title}</h3>
-                        <p className="font-mono text-accent text-sm mt-1">{item.role}</p>
+                    {/* Card Content Layout */}
+                    <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
+                      <div className="flex items-center gap-4">
+                        <img src={item.image} className="w-12 h-12 object-contain rounded bg-base/50 p-1" alt={item.title} />
+                        <div>
+                          <h3 className="font-bold text-lg md:text-xl text-textMain">{item.title}</h3>
+                          <p className="font-mono text-accent text-sm mt-1">{item.role}</p>
+                        </div>
                       </div>
+                      
                       <p className="font-mono text-xs text-textMuted md:ml-auto whitespace-nowrap text-left md:text-right hidden md:block">
                         {item.desc}
                       </p>
@@ -84,7 +87,6 @@ function Experience() {
                     initial="hidden"
                     whileInView="show"
                     viewport={{ once: true, margin: "-50px" }}
-                    // Added fixed height and flex-col for vertical centering
                     className="dev-card bg-surface relative overflow-hidden group h-[160px] md:h-[180px] flex flex-col justify-center"
                   >
                      {/* Background Banner */}
@@ -93,13 +95,16 @@ function Experience() {
                       style={{ backgroundImage: `url(${item.banner})` }}
                     />
 
+                    {/* Connection dot (Optional - uncomment if you want the dots on education too) */}
+                    {/* <div className="hidden md:block absolute -left-[51px] top-1/2 -translate-y-1/2 w-2 h-2 bg-base border border-accent z-10"></div> */}
+
                     {/* Card Content */}
                     <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 relative z-10 w-full">
                       <div className="flex items-center gap-4">
-                        <img src={item.image} className="w-12 h-12 object-contain rounded bg-base/50 p-1" alt={item.title} />
+                        <img src={item.image} className="w-12 h-12 bg-white/90 object-contain rounded p-1" alt={item.title} />
                         <div>
                           <h3 className="font-bold text-lg md:text-xl text-textMain">{item.title}</h3>
-                          <p className="font-mono text-accent text-sm mt-1">{item.role}</p>
+                          <p className="font-mono text-textMuted text-sm mt-1">{item.location}</p>
                         </div>
                       </div>
                       <p className="font-mono text-xs text-textMuted md:ml-auto whitespace-nowrap text-left md:text-right hidden md:block">
