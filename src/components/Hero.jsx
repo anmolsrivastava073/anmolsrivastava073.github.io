@@ -33,7 +33,7 @@ function Hero() {
       >
         {/* Opacity applied directly to the image */}
         <img 
-          src="/photos/front.jpg" 
+          src="/photos/front.png" 
           alt="Presentation Background" 
           className="w-full h-full object-cover object-center opacity-30 md:opacity-40"
         />
