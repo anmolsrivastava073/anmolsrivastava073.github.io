@@ -31,7 +31,7 @@ function Hero() {
       {/* Cinematic Background Image Layer */}
       <motion.div 
         style={{ y: bgY }}
-        className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-30 md:opacity-40"
+        className="absolute inset-0 w-full h-full z-0 pointer-events-none opacity-50 md:opacity-60"
       >
         <img 
           src="/photos/front.png" 
