@@ -42,12 +42,6 @@ function Hero() {
         <div className="absolute inset-0 bg-gradient-to-r from-base/90 via-transparent to-base/90"></div>
       </motion.div>
 
-      {/* Structural grid background lines */}
-      <div className="absolute inset-0 pointer-events-none border-x border-border/50 max-w-7xl mx-auto flex justify-between z-0">
-        <div className="w-px h-full bg-border/50"></div>
-        <div className="w-px h-full bg-border/50"></div>
-      </div>
-
       {/* Inner wrapper to keep text aligned with the rest of the portfolio */}
       <div className="max-w-7xl mx-auto w-full px-6 pt-20 relative z-10">
         <motion.div 
