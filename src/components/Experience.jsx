@@ -107,7 +107,7 @@ function Experience() {
                           <p className="font-mono text-textMuted text-sm mt-1">{item.location}</p>
                         </div>
                       </div>
-                      <p className="font-mono text-xs text-textMuted md:ml-auto whitespace-nowrap text-left md:text-right hidden md:block">
+                      <p className="font-mono text-xs text-textMuted max-w-xs text-left md:text-right hidden md:block">
                         {item.desc}
                       </p>
                     </div>
