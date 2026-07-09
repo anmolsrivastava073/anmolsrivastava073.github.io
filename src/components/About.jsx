@@ -37,14 +37,15 @@ function About() {
         </div>
 
         <div className="md:col-span-7">
-          <motion.h2 
+                    <motion.h2 
             initial={{ opacity: 0, x: -20 }}
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true }}
-            className="font-mono text-accent mb-4 tracking-widest text-sm"
+            className="font-mono text-accent mb-4 tracking-widest text-sm text-center"
           >
             01. // ABOUT_ME
           </motion.h2>
+          
           
           <motion.h3 
             initial={{ opacity: 0, y: 20 }}
