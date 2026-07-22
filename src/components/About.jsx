@@ -29,11 +29,7 @@ function About() {
             className="absolute inset-0 w-full h-[120%] object-cover opacity-90 group-hover:opacity-100 transition-all duration-700"
             alt="Anmol Srivastava"
           />
-          {/* Technical overlay metrics */}
-          <div className="absolute bottom-4 left-4 z-30 font-mono text-xs text-textMain bg-base border border-border p-2">
-            USER: ANMOL_SRIVASTAVA <br/>
-            STATUS: OPEN TO WORK
-          </div>
+          
         </div>
 
         <div className="md:col-span-7">
