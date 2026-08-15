@@ -56,9 +56,9 @@ function Hero() {
       <motion.div
         style={{
           y: bgY,
-          // Increased opacity to 80% in the middle, 20% at the edges
-          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.2) 100%)',
-          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.2) 100%)'
+          // Image mask: 90% visible in the center, 20% on the edges
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.2) 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.2) 100%)'
         }}
         className="absolute inset-0 w-full h-full z-0"
       >
@@ -69,8 +69,8 @@ function Hero() {
         />
       </motion.div>
 
-      {/* LAYER 2: The Dark Overlay */}
-      <div className="absolute inset-0 bg-[#050507]/60 z-[1]" />
+      {/* LAYER 2: The Dark Overlay - Drastically reduced from 60% to 20% to remove the "darkness" */}
+      <div className="absolute inset-0 bg-[#050507]/20 z-[1]" />
 
       {/* LAYER 3: The Content (Explicitly z-10) */}
       <div className="max-w-4xl mx-auto w-full relative z-10 text-center flex flex-col items-center">
