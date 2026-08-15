@@ -58,7 +58,7 @@ function Skills() {
               Skills
             </div>
             <h2 className="text-3xl sm:text-5xl font-extrabold tracking-tight text-zinc-100">
-              Things I know how to use
+              Things I work with
             </h2>
             <p className="text-sm text-zinc-400 mt-2 max-w-lg">
               Languages, frameworks, and tools. Some better than others — I'm honest about it.
