@@ -104,7 +104,7 @@ function Contact() {
                         rel="noreferrer"
                         className="p-3 rounded bg-[#121215] border border-zinc-800 hover:border-indigo-500 text-zinc-400 hover:text-zinc-100 transition-colors"
                         title={s.name}
-                      >
+                      <a>
                         <Icon className="w-4 h-4" />
                       </a>
                     )
