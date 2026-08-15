@@ -52,9 +52,14 @@ function Hero() {
       ref={heroRef}
       className="min-h-screen w-full flex items-center justify-center relative overflow-hidden bg-[#050507] pt-28 pb-20 px-6"
     >
-      {/* Changed to motion.img to apply the bgY parallax effect */}
+      {/* Background Image with Opacity Mask */}
       <motion.img
-        style={{ y: bgY }}
+        style={{ 
+          y: bgY,
+          // This creates the 0.2 opacity at the ends, and solid (1) in the middle
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.2) 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.2) 100%)'
+        }}
         src="/photos/front.png"
         alt="Presentation Background"
         className="absolute inset-0 w-full h-full object-cover object-center brightness-[1.5] contrast-[1.05]"
@@ -73,7 +78,7 @@ function Hero() {
           className="w-full flex flex-col items-center"
         >
           
-          {/* Status Badge - Fixed closing tag and typo */}
+          {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121215]/80 border border-zinc-700 text-xs mb-8 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-zinc-200">Open to opportunities</span>
