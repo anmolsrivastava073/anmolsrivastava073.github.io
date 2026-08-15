@@ -52,15 +52,8 @@ function Hero() {
       ref={heroRef}
       className="min-h-screen w-full flex items-center justify-center relative overflow-hidden bg-[#050507] pt-28 pb-20 px-6"
     >
-      {/* 
-        Background Image 
-        1. Mask alpha raised (15% at edges, 55% in middle) so the image is actually visible
-        2. Reduced blur to 2px
-        3. Raised brightness from 50 to 75
-        4. Lowered the overlay opacity below so it doesn't fully black the image out
-      */}
       <motion.img
-        style={{ 
+        style={{
           y: bgY,
           WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.15) 100%)',
           maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.15) 100%)'
@@ -69,13 +62,10 @@ function Hero() {
         alt="Presentation Background"
         className="absolute inset-0 w-full h-full object-cover object-center blur-[2px] brightness-75"
       />
-      
-      {/* Dark overlay lowered from 70% to 45% so the image reads through */}
+
       <div className="absolute inset-0 bg-[#050507]/45" />
 
-      {/* Hero Content */}
       <div className="max-w-4xl mx-auto w-full relative z-10 text-center flex flex-col items-center">
-        
         <motion.div
           style={{ y: textY, opacity }}
           initial={{ opacity: 0, y: 20 }}
@@ -83,8 +73,6 @@ function Hero() {
           transition={{ duration: 0.7, ease: 'easeOut' }}
           className="w-full flex flex-col items-center"
         >
-          
-          {/* Status Badge */}
           <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121215]/80 border border-zinc-700 text-xs mb-8 shadow-sm">
             <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-zinc-200">Open to opportunities</span>
@@ -95,7 +83,6 @@ function Hero() {
             </span>
           </div>
 
-          {/* Bold Name Headlines */}
           <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-zinc-100 leading-none mb-1">
             ANMOL
           </h1>
@@ -103,13 +90,11 @@ function Hero() {
             SRIVASTAVA<span className="text-indigo-500">.</span>
           </h1>
 
-          {/* Dynamic Typing Title */}
           <div className="h-8 mb-6 flex items-center justify-center font-mono text-base sm:text-lg text-indigo-400">
             <span className="font-semibold">{currentText}</span>
             <span className="w-2 h-5 bg-indigo-500 ml-1.5 animate-pulse" />
           </div>
 
-          {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 items-center justify-start">
             
               href="#projects"
@@ -136,9 +121,7 @@ function Hero() {
               <span>Contact</span>
             </a>
           </div>
-
         </motion.div>
-
       </div>
     </section>
   )
