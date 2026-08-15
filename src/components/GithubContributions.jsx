@@ -81,7 +81,7 @@ function GithubContributions() {
               GitHub Activity
             </div>
             <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-zinc-100">
-              The last 1 year contribution
+              Contributions so far
             </h2>
           </div>
 
