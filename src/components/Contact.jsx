@@ -97,7 +97,7 @@ function Contact() {
                   {socialLinks.map((s, i) => {
                     const Icon = s.icon
                     return (
-                      <a
+                      
                         key={i}
                         href={s.link}
                         target="_blank"
@@ -110,6 +110,15 @@ function Contact() {
                     )
                   })}
                 </div>
+              </div>
+
+              {/* Visitor Counter */}
+              <div className="mt-6 inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-[#121215] border border-zinc-800 text-xs text-zinc-400">
+                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+                <span>People who've visited this portfolio:</span>
+                <span className="font-bold text-zinc-100 tabular-nums text-sm">
+                  {error ? '—' : count === null ? '...' : count.toLocaleString()}
+                </span>
               </div>
             </div>
           </div>
@@ -182,17 +191,6 @@ function Contact() {
             </form>
           </div>
 
-        </div>
-
-        {/* Visitor Counter */}
-        <div className="mt-12 flex justify-center">
-          <div className="inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-[#121215] border border-zinc-800 text-xs text-zinc-400">
-            <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
-            <span>People who've visited this portfolio:</span>
-            <span className="font-bold text-zinc-100 tabular-nums text-sm">
-              {error ? '—' : count === null ? '...' : count.toLocaleString()}
-            </span>
-          </div>
         </div>
 
       </div>
