@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion'
 import { FaGithub, FaRocket, FaEnvelope, FaLocationDot } from 'react-icons/fa6'
 
 const TYPING_TITLES = [
@@ -12,8 +12,6 @@ const TYPING_TITLES = [
 function Hero() {
   const heroRef = useRef(null)
   const [titleIndex, setTitleIndex] = useState(0)
-  const [currentText, setCurrentText] = useState('')
-  const [isDeleting, setIsDeleting] = useState(false)
 
   const { scrollYProgress } = useScroll({
     target: heroRef,
@@ -24,27 +22,14 @@ function Hero() {
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
 
+  // Elegant interval-based cycling instead of the choppy typewriter effect
   useEffect(() => {
-    const fullText = TYPING_TITLES[titleIndex]
-    const typingSpeed = isDeleting ? 30 : 60
+    const intervalId = setInterval(() => {
+      setTitleIndex((prev) => (prev + 1) % TYPING_TITLES.length)
+    }, 3500) // Changes every 3.5 seconds
 
-    const timer = setTimeout(() => {
-      if (!isDeleting) {
-        setCurrentText(fullText.substring(0, currentText.length + 1))
-        if (currentText.length === fullText.length) {
-          setTimeout(() => setIsDeleting(true), 2000)
-        }
-      } else {
-        setCurrentText(fullText.substring(0, currentText.length - 1))
-        if (currentText.length === 0) {
-          setIsDeleting(false)
-          setTitleIndex((prev) => (prev + 1) % TYPING_TITLES.length)
-        }
-      }
-    }, typingSpeed)
-
-    return () => clearTimeout(timer)
-  }, [currentText, isDeleting, titleIndex])
+    return () => clearInterval(intervalId)
+  }, [])
 
   return (
     <section
@@ -56,7 +41,6 @@ function Hero() {
       <motion.div
         style={{
           y: bgY,
-          // Image mask: 90% visible in the center, 20% on the edges
           WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.2) 100%)',
           maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.2) 100%)'
         }}
@@ -69,7 +53,7 @@ function Hero() {
         />
       </motion.div>
 
-      {/* LAYER 2: The Dark Overlay - Drastically reduced from 60% to 20% to remove the "darkness" */}
+      {/* LAYER 2: The Dark Overlay */}
       <div className="absolute inset-0 bg-[#050507]/20 z-[1]" />
 
       {/* LAYER 3: The Content (Explicitly z-10) */}
@@ -98,12 +82,28 @@ function Hero() {
             SRIVASTAVA<span className="text-indigo-500">.</span>
           </h1>
 
-          <div className="h-8 mb-6 flex items-center justify-center font-mono text-base sm:text-lg text-indigo-400">
-            <span className="font-semibold">{currentText}</span>
-            <span className="w-2 h-5 bg-indigo-500 ml-1.5 animate-pulse" />
+          {/* Premium Vertical Slide & Fade Animation */}
+          <div className="h-8 mb-6 flex items-center justify-center font-mono text-base sm:text-lg text-indigo-400 overflow-hidden relative w-full">
+            <AnimatePresence mode="popLayout">
+              <motion.span
+                key={titleIndex}
+                initial={{ y: 30, opacity: 0, filter: 'blur(4px)' }}
+                animate={{ y: 0, opacity: 1, filter: 'blur(0px)' }}
+                exit={{ y: -30, opacity: 0, filter: 'blur(4px)' }}
+                transition={{ 
+                  duration: 0.5, 
+                  type: 'spring', 
+                  stiffness: 250, 
+                  damping: 25 
+                }}
+                className="font-semibold absolute text-center w-full"
+              >
+                {TYPING_TITLES[titleIndex]}
+              </motion.span>
+            </AnimatePresence>
           </div>
 
-          <div className="flex flex-wrap gap-4 items-center justify-start">
+          <div className="flex flex-wrap gap-4 items-center justify-start mt-2">
             <a href="#projects"
               className="px-7 py-3.5 bg-zinc-100 text-zinc-950 font-bold font-mono text-xs uppercase tracking-wider hover:bg-indigo-500 hover:text-white transition-colors flex items-center gap-2 rounded-sm shadow-md group"
             >
