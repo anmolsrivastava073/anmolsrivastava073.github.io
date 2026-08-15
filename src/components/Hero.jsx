@@ -57,8 +57,8 @@ function Hero() {
         style={{
           y: bgY,
           // Decreased maximum opacity to 30% in the middle, 5% at the edges
-          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.05) 100%)',
-          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.5) 50%, rgba(0, 0, 0, 0.05) 100%)'
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.05) 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.1) 50%, rgba(0, 0, 0, 0.05) 100%)'
         }}
         className="absolute inset-0 w-full h-full z-0"
       >
