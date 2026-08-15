@@ -52,16 +52,25 @@ function Hero() {
       ref={heroRef}
       className="min-h-screen w-full flex items-center justify-center relative overflow-hidden bg-[#050507] pt-28 pb-20 px-6"
     >
-      <motion.img
+      {/* 
+        Mobile Safari Fix: 
+        The mask and motion (bgY) are applied to the wrapper div.
+        The blur and brightness are applied to the child image. 
+      */}
+      <motion.div
         style={{
           y: bgY,
           WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.15) 100%)',
           maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.15) 100%)'
         }}
-        src="/photos/front.png"
-        alt="Presentation Background"
-        className="absolute inset-0 w-full h-full object-cover object-center blur-[2px] brightness-75"
-      />
+        className="absolute inset-0 w-full h-full"
+      >
+        <img
+          src="/photos/front.png"
+          alt="Presentation Background"
+          className="w-full h-full object-cover object-center blur-[2px] brightness-75"
+        />
+      </motion.div>
 
       <div className="absolute inset-0 bg-[#050507]/45" />
 
@@ -96,7 +105,6 @@ function Hero() {
           </div>
 
           <div className="flex flex-wrap gap-4 items-center justify-start">
-            
             <a href="#projects"
               className="px-7 py-3.5 bg-zinc-100 text-zinc-950 font-bold font-mono text-xs uppercase tracking-wider hover:bg-indigo-500 hover:text-white transition-colors flex items-center gap-2 rounded-sm shadow-md group"
             >
