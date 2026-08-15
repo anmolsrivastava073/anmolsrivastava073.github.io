@@ -70,7 +70,7 @@ function Contact() {
                 Let's Connect
               </h2>
               <p className="text-sm text-zinc-400 leading-relaxed mb-8">
-                Got a project idea, an opportunity, or just want to talk about tech? My inbox is always open. I read every message — seriously, I do.
+                Got a project idea, an opportunity, or just want to talk about tech? My inbox is always open. I read every message - seriously, I do.
               </p>
 
               {/* Direct Email Card with 1-Click Copy */}
@@ -78,7 +78,7 @@ function Contact() {
                 <div className="text-xs text-zinc-500 mb-1">My email address</div>
                 <div className="flex items-center justify-between gap-3">
                   <span className="font-mono text-sm font-semibold text-zinc-200 truncate">
-                    anmolsriv073@gmail.com
+                    anmolsrivastava073@gmail.com
                   </span>
                   <button
                     onClick={copyEmail}
