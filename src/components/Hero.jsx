@@ -52,28 +52,28 @@ function Hero() {
       ref={heroRef}
       className="min-h-screen w-full flex items-center justify-center relative overflow-hidden bg-[#050507] pt-28 pb-20 px-6"
     >
-      {/* 
-        Mobile Safari Fix: 
-        The mask and motion (bgY) are applied to the wrapper div.
-        The blur and brightness are applied to the child image. 
-      */}
+      {/* LAYER 1: The Image (Explicitly z-0) */}
       <motion.div
         style={{
           y: bgY,
-          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.15) 100%)',
-          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.15) 100%)'
+          // Adjusted to 80% opacity in middle, 10% at edges so it survives the black overlay
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.1) 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.8) 50%, rgba(0, 0, 0, 0.1) 100%)'
         }}
-        className="absolute inset-0 w-full h-full"
+        className="absolute inset-0 w-full h-full z-0"
       >
         <img
           src="/photos/front.png"
           alt="Presentation Background"
-          className="w-full h-full object-cover object-center blur-[2px] brightness-75"
+          // Removed brightness-75 to stop compound darkening. The overlay handles the darkening.
+          className="w-full h-full object-cover object-center blur-[3px]"
         />
       </motion.div>
 
-      <div className="absolute inset-0 bg-[#050507]/45" />
+      {/* LAYER 2: The Dark Overlay (Explicitly z-[1] so it sits precisely over the image) */}
+      <div className="absolute inset-0 bg-[#050507]/50 z-[1]" />
 
+      {/* LAYER 3: The Content (Explicitly z-10) */}
       <div className="max-w-4xl mx-auto w-full relative z-10 text-center flex flex-col items-center">
         <motion.div
           style={{ y: textY, opacity }}
