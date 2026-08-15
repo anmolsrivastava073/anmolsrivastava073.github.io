@@ -66,17 +66,7 @@ function About() {
                     className="w-full object-cover object-top group-hover:scale-105 transition-transform duration-500"
                   />
                   
-                  {/* Floating University Pill at bottom */}
-                  <div className="absolute bottom-4 left-4 right-4 p-3 bg-[#1c1c1e]/95 border border-zinc-700 rounded-xl flex items-center justify-between text-xs shadow-xl backdrop-blur-sm">
-                    <div>
-                      <div className="text-[10px] text-zinc-500 mb-0.5">College</div>
-                      <div className="text-zinc-100 font-semibold">Manipal University Jaipur</div>
-                    </div>
-                    <div className="text-right">
-                      <div className="text-[10px] text-zinc-500 mb-0.5">Batch</div>
-                      <div className="text-indigo-400 font-bold">2025 – 2029</div>
-                    </div>
-                  </div>
+                  
                 </div>
 
               </div>
@@ -88,13 +78,13 @@ function About() {
           <div className="lg:col-span-7 space-y-6">
             <div className="space-y-5 text-zinc-400 text-base leading-relaxed">
               <p>
-                Hey, I'm Anmol — a first-year CS student at <span className="text-zinc-100 font-semibold">Manipal University Jaipur</span>. I got into programming because I liked the idea of building things from nothing, and I haven't stopped since.
+                Hey, I'm Anmol - A first-year CS student at <span className="text-zinc-100 font-semibold">Manipal University Jaipur</span>. I got into programming because I liked the idea of building things from nothing, and I haven't stopped since.
               </p>
               <p>
                 I mostly work with Java on the backend and React on the frontend. When I'm not building apps, I'm probably reading about AI, contributing to open source, or debugging something that "should've worked" three hours ago.
               </p>
               <p>
-                Outside of coding, I write on Substack, follow tech news a bit too closely, and enjoy a good conversation about where software is headed.
+                Outside of coding, I follow tech news a bit too closely, and enjoy a good conversation about where software is headed.
               </p>
             </div>
 
