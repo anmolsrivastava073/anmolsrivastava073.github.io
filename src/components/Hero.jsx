@@ -54,23 +54,24 @@ function Hero() {
     >
       {/* 
         Background Image 
-        1. Lowered alpha in linear-gradient (max 25% visible in middle, 5% at edges)
-        2. Added blur-[3px] to hide screen text
-        3. Changed high brightness to brightness-50
+        1. Mask alpha raised (15% at edges, 55% in middle) so the image is actually visible
+        2. Reduced blur to 2px
+        3. Raised brightness from 50 to 75
+        4. Lowered the overlay opacity below so it doesn't fully black the image out
       */}
       <motion.img
         style={{ 
           y: bgY,
-          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.05) 100%)',
-          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.05) 100%)'
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.15) 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.15) 0%, rgba(0, 0, 0, 0.55) 50%, rgba(0, 0, 0, 0.15) 100%)'
         }}
         src="/photos/front.png"
         alt="Presentation Background"
-        className="absolute inset-0 w-full h-full object-cover object-center blur-[3px] brightness-50"
+        className="absolute inset-0 w-full h-full object-cover object-center blur-[2px] brightness-75"
       />
       
-      {/* Dark overlay increased from 10% to 70% opacity to push image further back */}
-      <div className="absolute inset-0 bg-[#050507]/70" />
+      {/* Dark overlay lowered from 70% to 45% so the image reads through */}
+      <div className="absolute inset-0 bg-[#050507]/45" />
 
       {/* Hero Content */}
       <div className="max-w-4xl mx-auto w-full relative z-10 text-center flex flex-col items-center">
@@ -110,7 +111,7 @@ function Hero() {
 
           {/* CTA Buttons */}
           <div className="flex flex-wrap gap-4 items-center justify-start">
-            <a
+            
               href="#projects"
               className="px-7 py-3.5 bg-zinc-100 text-zinc-950 font-bold font-mono text-xs uppercase tracking-wider hover:bg-indigo-500 hover:text-white transition-colors flex items-center gap-2 rounded-sm shadow-md group"
             >
@@ -119,7 +120,7 @@ function Hero() {
               <span className="group-hover:translate-x-1 transition-transform">-&gt;</span>
             </a>
 
-            <a
+            
               href="#contributions"
               className="px-7 py-3.5 bg-[#121215] border border-zinc-800 hover:border-zinc-600 text-zinc-200 font-mono text-xs uppercase tracking-wider transition-colors flex items-center gap-2 rounded-sm"
             >
@@ -127,7 +128,7 @@ function Hero() {
               <span>Contributions</span>
             </a>
 
-            <a
+            
               href="#contact"
               className="px-6 py-3.5 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-zinc-200 font-mono text-xs uppercase tracking-wider transition-colors flex items-center gap-2 rounded-sm"
             >
