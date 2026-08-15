@@ -83,7 +83,8 @@ function Hero() {
           </h1>
 
           {/* Premium Vertical Slide & Fade Animation */}
-          <div className="h-8 mb-6 flex items-center justify-center font-mono text-base sm:text-lg text-indigo-400 overflow-hidden relative w-full">
+          {/* text-indigo-400 replaced with text-yellow-50 */}
+          <div className="h-8 mb-6 flex items-center justify-center font-mono text-base sm:text-lg text-yellow-50 overflow-hidden relative w-full">
             <AnimatePresence mode="popLayout">
               <motion.span
                 key={titleIndex}
