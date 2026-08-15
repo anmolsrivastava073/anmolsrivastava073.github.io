@@ -52,20 +52,25 @@ function Hero() {
       ref={heroRef}
       className="min-h-screen w-full flex items-center justify-center relative overflow-hidden bg-[#050507] pt-28 pb-20 px-6"
     >
-      {/* Background Image with Opacity Mask */}
+      {/* 
+        Background Image 
+        1. Lowered alpha in linear-gradient (max 25% visible in middle, 5% at edges)
+        2. Added blur-[3px] to hide screen text
+        3. Changed high brightness to brightness-50
+      */}
       <motion.img
         style={{ 
           y: bgY,
-          // This creates the 0.2 opacity at the ends, and solid (1) in the middle
-          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.2) 100%)',
-          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.2) 100%)'
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.05) 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.05) 0%, rgba(0, 0, 0, 0.25) 50%, rgba(0, 0, 0, 0.05) 100%)'
         }}
         src="/photos/front.png"
         alt="Presentation Background"
-        className="absolute inset-0 w-full h-full object-cover object-center brightness-[1.5] contrast-[1.05]"
+        className="absolute inset-0 w-full h-full object-cover object-center blur-[3px] brightness-50"
       />
       
-      <div className="absolute inset-0 bg-[#050507]/10" />
+      {/* Dark overlay increased from 10% to 70% opacity to push image further back */}
+      <div className="absolute inset-0 bg-[#050507]/70" />
 
       {/* Hero Content */}
       <div className="max-w-4xl mx-auto w-full relative z-10 text-center flex flex-col items-center">
