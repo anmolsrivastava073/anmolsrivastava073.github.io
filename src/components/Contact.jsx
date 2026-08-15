@@ -126,7 +126,7 @@ function Contact() {
               </p>
 
               {/* Email Card */}
-              <div className="p-5 rounded-lg bg-[#121215] border border-zinc-800 mb-8">
+              <div className="p-5 rounded-lg bg-[#121215] border border-zinc-800 mb-8 w-full">
                 <div className="text-xs text-zinc-500 mb-1">
                   My email address
                 </div>
@@ -182,14 +182,15 @@ function Contact() {
               </div>
 
               {/* Visitor Counter */}
-              <div className="mt-6 inline-flex items-center gap-3 px-5 py-3 rounded-xl bg-[#121215] border border-zinc-800 text-xs text-zinc-400">
-                <span className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse" />
+              <div className="mt-8 p-5 rounded-lg bg-[#121215] border border-zinc-800 flex items-center justify-between w-full">
+                <div className="flex items-center gap-3">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse" />
+                  <span className="text-sm text-zinc-400">
+                    People who've visited this portfolio
+                  </span>
+                </div>
 
-                <span>
-                  People who've visited this portfolio:
-                </span>
-
-                <span className="font-bold text-zinc-100 tabular-nums text-sm">
+                <span className="font-mono font-bold text-zinc-100 tabular-nums text-lg">
                   {error
                     ? '—'
                     : count === null
