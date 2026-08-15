@@ -52,21 +52,15 @@ function Hero() {
       ref={heroRef}
       className="min-h-screen w-full flex items-center justify-center relative overflow-hidden bg-[#050507] pt-28 pb-20 px-6"
     >
-      {/* Background Presentation Photo Layer */}
-      <motion.div
-  style={{ y: bgY }}
-  className="absolute inset-0 z-0 pointer-events-none"
->
-  <img
-    src="/photos/front.png"
-    alt="Presentation Background"
-    className="w-full h-full object-cover object-center opacity-65"
-  />
-  {/* Dark gradient for text readability */}
-  <div className="absolute inset-0 bg-gradient-to-b from-[#050507]/10 via-[#050507]/25 to-[#050507]/75" />
-  {/* Subtle side vignette */}
-  <div className="absolute inset-0 bg-gradient-to-r from-[#050507]/45 via-transparent to-[#050507]/45" />
-</motion.div>
+      {/* Changed to motion.img to apply the bgY parallax effect */}
+      <motion.img
+        style={{ y: bgY }}
+        src="/photos/front.png"
+        alt="Presentation Background"
+        className="absolute inset-0 w-full h-full object-cover object-center brightness-[1.5] contrast-[1.05]"
+      />
+      
+      <div className="absolute inset-0 bg-[#050507]/10" />
 
       {/* Hero Content */}
       <div className="max-w-4xl mx-auto w-full relative z-10 text-center flex flex-col items-center">
@@ -79,9 +73,9 @@ function Hero() {
           className="w-full flex flex-col items-center"
         >
           
-          {/* Status Badge */}
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121215] border border-zinc-800 text-xs mb-8 shadow-sm">
-            <span className="w-2 h-2 rounded-full bg-emerged-500 bg-emerald-500 animate-pulse" />
+          {/* Status Badge - Fixed closing tag and typo */}
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121215]/80 border border-zinc-700 text-xs mb-8 shadow-sm">
+            <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
             <span className="text-zinc-200">Open to opportunities</span>
             <span className="text-zinc-600">|</span>
             <span className="text-zinc-400 flex items-center gap-1">
@@ -104,9 +98,8 @@ function Hero() {
             <span className="w-2 h-5 bg-indigo-500 ml-1.5 animate-pulse" />
           </div>
 
-
           {/* CTA Buttons */}
-          <div className="flex flex-wrap gap-4 items-center justify-center">
+          <div className="flex flex-wrap gap-4 items-center justify-start">
             <a
               href="#projects"
               className="px-7 py-3.5 bg-zinc-100 text-zinc-950 font-bold font-mono text-xs uppercase tracking-wider hover:bg-indigo-500 hover:text-white transition-colors flex items-center gap-2 rounded-sm shadow-md group"
