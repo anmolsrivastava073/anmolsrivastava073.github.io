@@ -96,18 +96,22 @@ function Contact() {
                 <div className="flex flex-wrap gap-2.5">
                   {socialLinks.map((s, i) => {
                     const Icon = s.icon
-                    return (
+                      {socialLinks.map((s, i) => {
+                        const Icon = s.icon
                       
-                        key={i}
-                        href={s.link}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="p-3 rounded bg-[#121215] border border-zinc-800 hover:border-indigo-500 text-zinc-400 hover:text-zinc-100 transition-colors"
-                        title={s.name}
-                      >
-                        <Icon className="w-4 h-4" />
-                      </a>
-                    )
+                        return (
+                          <a
+                            key={i}
+                            href={s.link}
+                            target="_blank"
+                            rel="noreferrer"
+                            className="p-3 rounded bg-[#121215] border border-zinc-800 hover:border-indigo-500 text-zinc-400 hover:text-zinc-100 transition-colors"
+                            title={s.name}
+                          >
+                            <Icon className="w-4 h-4" />
+                          </a>
+                        )
+
                   })}
                 </div>
               </div>
