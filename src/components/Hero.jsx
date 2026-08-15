@@ -54,17 +54,19 @@ function Hero() {
     >
       {/* Background Presentation Photo Layer */}
       <motion.div
-        style={{ y: bgY }}
-        className="absolute inset-0 z-0 pointer-events-none"
-      >
-        <img
-          src="/photos/front.png"
-          alt="Presentation Background"
-          className="w-full h-full object-cover object-center opacity-30"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-[#050507]/20 via-[#050507]/60 to-[#050507]" />
-        <div className="absolute inset-0 bg-gradient-to-r from-[#050507]/80 via-transparent to-[#050507]/80" />
-      </motion.div>
+  style={{ y: bgY }}
+  className="absolute inset-0 z-0 pointer-events-none"
+>
+  <img
+    src="/photos/front.png"
+    alt="Presentation Background"
+    className="w-full h-full object-cover object-center opacity-65"
+  />
+  {/* Dark gradient for text readability */}
+  <div className="absolute inset-0 bg-gradient-to-b from-[#050507]/10 via-[#050507]/25 to-[#050507]/75" />
+  {/* Subtle side vignette */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#050507]/45 via-transparent to-[#050507]/45" />
+</motion.div>
 
       {/* Hero Content */}
       <div className="max-w-4xl mx-auto w-full relative z-10 text-center flex flex-col items-center">
