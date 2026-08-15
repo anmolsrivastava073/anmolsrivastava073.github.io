@@ -97,7 +97,7 @@ function Hero() {
 
           <div className="flex flex-wrap gap-4 items-center justify-start">
             
-              href="#projects"
+            <a href="#projects"
               className="px-7 py-3.5 bg-zinc-100 text-zinc-950 font-bold font-mono text-xs uppercase tracking-wider hover:bg-indigo-500 hover:text-white transition-colors flex items-center gap-2 rounded-sm shadow-md group"
             >
               <FaRocket className="text-xs" />
@@ -105,16 +105,14 @@ function Hero() {
               <span className="group-hover:translate-x-1 transition-transform">-&gt;</span>
             </a>
 
-            
-              href="#contributions"
+            <a href="#contributions"
               className="px-7 py-3.5 bg-[#121215] border border-zinc-800 hover:border-zinc-600 text-zinc-200 font-mono text-xs uppercase tracking-wider transition-colors flex items-center gap-2 rounded-sm"
             >
               <FaGithub className="text-indigo-400 text-sm" />
               <span>Contributions</span>
             </a>
 
-            
-              href="#contact"
+            <a href="#contact"
               className="px-6 py-3.5 border border-zinc-800 hover:border-zinc-700 text-zinc-400 hover:text-zinc-200 font-mono text-xs uppercase tracking-wider transition-colors flex items-center gap-2 rounded-sm"
             >
               <FaEnvelope className="text-xs" />
