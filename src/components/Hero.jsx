@@ -18,7 +18,7 @@ function Hero() {
     offset: ['start start', 'end start']
   })
 
-  // Scroll animations
+  // Scroll animations (fade/move out when scrolling down)
   const textY = useTransform(scrollYProgress, [0, 1], ['0%', '30%'])
   const opacity = useTransform(scrollYProgress, [0, 0.8], [1, 0])
   const bgY = useTransform(scrollYProgress, [0, 1], ['0%', '15%'])
@@ -31,32 +31,6 @@ function Hero() {
 
     return () => clearInterval(intervalId)
   }, [])
-
-  // ----------------------------------------------------
-  // ANIMATION VARIANTS FOR SLOW STAGGERED FADE-IN ON LOAD
-  // ----------------------------------------------------
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.25, // Delay between each element fading in
-        delayChildren: 0.3,    // Initial wait before starting
-      }
-    }
-  }
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 25 },
-    visible: { 
-      opacity: 1, 
-      y: 0, 
-      transition: { 
-        duration: 1.2, // Slow 1.2 second fade for each item
-        ease: [0.16, 1, 0.3, 1] // Super smooth custom easing
-      } 
-    }
-  }
 
   return (
     <section
@@ -73,7 +47,7 @@ function Hero() {
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 2 }} // Very slow background fade-in
+        transition={{ duration: 1.5 }} // Background fades in first
         className="absolute inset-0 w-full h-full z-0"
       >
         <img
@@ -94,15 +68,19 @@ function Hero() {
           style={{ y: textY, opacity }}
           className="w-full flex flex-col items-center"
         >
-          {/* Inner motion.div handles the slow fade-in on load */}
+          {/* Inner motion.div handles the SLOW SIMULTANEOUS fade-in on load */}
           <motion.div
-            variants={containerVariants}
-            initial="hidden"
-            animate="visible"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ 
+              duration: 2,    // Slow 2-second fade in
+              delay: 0.8,     // Wait almost a second so the background is seen first
+              ease: 'easeOut'
+            }}
             className="w-full flex flex-col items-center"
           >
             
-            <motion.div variants={itemVariants} className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121215]/80 border border-zinc-700 text-xs mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-[#121215]/80 border border-zinc-700 text-xs mb-8 shadow-sm">
               <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse" />
               <span className="text-zinc-200">Open to opportunities</span>
               <span className="text-zinc-600">|</span>
@@ -110,18 +88,18 @@ function Hero() {
                 <FaLocationDot className="text-indigo-400 text-[10px]" />
                 Jaipur, India
               </span>
-            </motion.div>
+            </div>
 
-            <motion.h1 variants={itemVariants} className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-zinc-100 leading-none mb-1">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-zinc-100 leading-none mb-1">
               ANMOL
-            </motion.h1>
+            </h1>
             
-            <motion.h1 variants={itemVariants} className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-zinc-400 leading-none mb-6">
+            <h1 className="text-6xl sm:text-7xl md:text-8xl lg:text-9xl font-black tracking-tighter text-zinc-400 leading-none mb-6">
               SRIVASTAVA<span className="text-indigo-500">.</span>
-            </motion.h1>
+            </h1>
 
             {/* Premium Vertical Slide & Fade Animation */}
-            <motion.div variants={itemVariants} className="h-8 mb-6 flex items-center justify-center font-mono text-base sm:text-lg text-yellow-50 overflow-hidden relative w-full">
+            <div className="h-8 mb-6 flex items-center justify-center font-mono text-base sm:text-lg text-yellow-50 overflow-hidden relative w-full">
               <AnimatePresence mode="popLayout">
                 <motion.span
                   key={titleIndex}
@@ -139,9 +117,9 @@ function Hero() {
                   {TYPING_TITLES[titleIndex]}
                 </motion.span>
               </AnimatePresence>
-            </motion.div>
+            </div>
 
-            <motion.div variants={itemVariants} className="flex flex-wrap gap-4 items-center justify-start mt-2">
+            <div className="flex flex-wrap gap-4 items-center justify-start mt-2">
               <a href="#projects"
                 className="px-7 py-3.5 bg-zinc-100 text-zinc-950 font-bold font-mono text-xs uppercase tracking-wider hover:bg-indigo-500 hover:text-white transition-colors flex items-center gap-2 rounded-sm shadow-md group"
               >
@@ -163,7 +141,7 @@ function Hero() {
                 <FaEnvelope className="text-xs" />
                 <span>Contact</span>
               </a>
-            </motion.div>
+            </div>
 
           </motion.div>
         </motion.div>
