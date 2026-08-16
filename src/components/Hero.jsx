@@ -41,20 +41,23 @@ function Hero() {
       <motion.div
         style={{
           y: bgY,
-          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.2) 100%)',
-          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0.9) 50%, rgba(0, 0, 0, 0.2) 100%)'
+          // Changed center opacity from 0.9 to 1 for maximum visibility
+          WebkitMaskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.1) 100%)',
+          maskImage: 'linear-gradient(to right, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0.1) 100%)'
         }}
         className="absolute inset-0 w-full h-full z-0"
       >
         <img
           src="/photos/front.png"
           alt="Presentation Background"
-          className="w-full h-full object-cover object-center blur-[3px]"
+          // Added brightness-[1.3] and contrast-125 to make the image brighter and pop more
+          className="w-full h-full object-cover object-center blur-[3px] brightness-[1.3] contrast-125" 
         />
       </motion.div>
 
       {/* LAYER 2: The Dark Overlay */}
-      <div className="absolute inset-0 bg-[#050507]/20 z-[1]" />
+      {/* Changed to a gradient so it doesn't darken the middle of the image, only the edges */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#050507]/60 via-transparent to-[#050507]/60 z-[1]" />
 
       {/* LAYER 3: The Content (Explicitly z-10) */}
       <div className="max-w-4xl mx-auto w-full relative z-10 text-center flex flex-col items-center">
@@ -83,7 +86,6 @@ function Hero() {
           </h1>
 
           {/* Premium Vertical Slide & Fade Animation */}
-          {/* text-indigo-400 replaced with text-yellow-50 */}
           <div className="h-8 mb-6 flex items-center justify-center font-mono text-base sm:text-lg text-yellow-50 overflow-hidden relative w-full">
             <AnimatePresence mode="popLayout">
               <motion.span
