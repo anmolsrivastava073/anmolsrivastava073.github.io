@@ -47,7 +47,7 @@ function Hero() {
         }}
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ duration: 1.5 }} // Background fades in first
+        transition={{ duration: 1.8 }} // Background fades in first
         className="absolute inset-0 w-full h-full z-0"
       >
         <img
@@ -73,8 +73,8 @@ function Hero() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ 
-              duration: 2,    // Slow 2-second fade in
-              delay: 0.8,     // Wait almost a second so the background is seen first
+              duration: 3,    // Slow 2-second fade in
+              delay: 1.6,     // Wait almost a second so the background is seen first
               ease: 'easeOut'
             }}
             className="w-full flex flex-col items-center"
