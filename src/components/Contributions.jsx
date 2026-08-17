@@ -130,7 +130,7 @@ function Contributions() {
               className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-zinc-100 transition-colors mb-2"
             >
               <SiLeetcode className="text-sm text-yellow-500" />
-              <span>@anmolsrivastava073</span>
+              <span>@Anmol_Srivastava073</span>
               <span>&rarr;</span>
             </a>
           )}
