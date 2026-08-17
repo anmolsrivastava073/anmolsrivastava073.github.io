@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react'
 import { motion } from 'framer-motion'
 import { FaGithub } from 'react-icons/fa6'
-import { SiLeetcode } from 'react-icons/si' // Imported LeetCode icon
+import { SiLeetcode } from 'react-icons/si' 
 import { fetchGitHubContributions, calculateAnalytics } from '../utils/githubData'
 
 const MONTH_NAMES = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
