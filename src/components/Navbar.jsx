@@ -5,8 +5,8 @@ import { Command, Menu, X } from 'lucide-react'
 
 const navItems = [
   { id: 'about', label: 'About' },
-  { id: 'contributions', label: 'Contributions' },
   { id: 'experience', label: 'Experience' },
+  { id: 'contributions', label: 'Contributions' },
   { id: 'skills', label: 'Skills' },
   { id: 'projects', label: 'Projects' },
   { id: 'resume', label: 'Resume' },
