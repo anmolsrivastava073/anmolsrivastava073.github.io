@@ -11,13 +11,13 @@ function CommandPalette({ isOpen, onClose }) {
   const [selectedIndex, setSelectedIndex] = useState(0)
   const inputRef = useRef(null)
 
-  const actions = [
+ const actions = [
     {
       category: 'Navigation',
       items: [
         { id: 'about', label: 'About Me', icon: User, action: () => scrollTo('about') },
-        { id: 'contributions', label: 'GitHub Contributions', icon: FolderGit2, action: () => scrollTo('contributions') },
         { id: 'experience', label: 'Experience & Education', icon: Briefcase, action: () => scrollTo('experience') },
+        { id: 'contributions', label: 'Contributions (GitHub/LeetCode)', icon: FolderGit2, action: () => scrollTo('contributions') }, // Moved and renamed
         { id: 'skills', label: 'Skills & Technologies', icon: Cpu, action: () => scrollTo('skills') },
         { id: 'projects', label: 'Featured Projects', icon: FolderGit2, action: () => scrollTo('projects') },
         { id: 'resume', label: 'Resume & Certifications', icon: Award, action: () => scrollTo('resume') },
