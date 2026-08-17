@@ -27,8 +27,8 @@ function ProjectRow({ project, index }) {
 
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 70, damping: 20, restDelta: 0.001 })
 
-  // Parallax calculations
-  const yImage = useTransform(smoothProgress, [0, 1], ["-8%", "8%"])
+  // Reduced parallax distance so the contained image doesn't slide too far
+  const yImage = useTransform(smoothProgress, [0, 1], ["-4%", "4%"])
   const yText = useTransform(smoothProgress, [0, 1], ["12%", "-12%"])
 
   const isEven = index % 2 === 0
@@ -38,21 +38,21 @@ function ProjectRow({ project, index }) {
       ref={rowRef}
       className={`group relative py-16 md:py-24 flex flex-col ${isEven ? 'md:flex-row' : 'md:flex-row-reverse'} items-center gap-8 md:gap-0`}
     >
-      {/* 1. Narrower Image Container */}
+      {/* 1. Image Container (Updated to fit image perfectly) */}
       <motion.div
         initial={{ clipPath: 'inset(10% 10% 10% 10% round 24px)', filter: 'blur(10px)', opacity: 0, scale: 0.95 }}
         whileInView={{ clipPath: 'inset(0% 0% 0% 0% round 16px)', filter: 'blur(0px)', opacity: 1, scale: 1 }}
         viewport={{ once: true, margin: "-10%" }}
         transition={{ duration: 1.4, ease: customEase }}
-        className="w-full md:w-[55%] relative aspect-[4/3] overflow-hidden bg-[#121215] shadow-2xl z-10"
+        className="w-full md:w-[55%] relative aspect-[4/3] overflow-hidden bg-[#0d0d10] border border-white/5 shadow-2xl z-10 flex items-center justify-center"
       >
         <motion.img
-          style={{ y: yImage, scale: 1.15 }}
+          style={{ y: yImage, scale: 1.02 }}
           src={project.image}
           alt={project.title}
-          className="absolute inset-0 w-full h-[120%] object-cover object-top will-change-transform group-hover:scale-105 transition-transform duration-1000 ease-[0.16,1,0.3,1]"
+          className="w-full h-full object-contain p-6 md:p-10 will-change-transform group-hover:scale-110 transition-transform duration-1000 ease-[0.16,1,0.3,1]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#050507]/80 via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#050507]/40 via-transparent to-transparent opacity-60 group-hover:opacity-20 transition-opacity duration-700 pointer-events-none" />
         <div className="absolute inset-0 bg-indigo-500/10 mix-blend-overlay opacity-0 group-hover:opacity-100 transition-opacity duration-700 pointer-events-none" />
       </motion.div>
 
@@ -127,7 +127,6 @@ function ProjectRow({ project, index }) {
 function Projects() {
   return (
     <section id="projects" className="py-32 px-6 border-t border-zinc-800 bg-[#050507] overflow-hidden">
-      {/* Changed max-w-7xl to max-w-5xl here for a tighter, narrower layout */}
       <div className="max-w-5xl mx-auto">
         
         <div className="mb-24 md:flex items-end justify-between pb-8 relative">
