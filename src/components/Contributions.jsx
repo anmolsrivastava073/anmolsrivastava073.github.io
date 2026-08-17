@@ -12,7 +12,7 @@ function Contributions() {
   const [loading, setLoading] = useState(true)
   const [hoveredDay, setHoveredDay] = useState(null)
   const [selectedYear, setSelectedYear] = useState('2026')
-  const [activePlatform, setActivePlatform] = useState('github')
+  const [activePlatform, setActivePlatform] = useState('github') 
 
   useEffect(() => {
     let isMounted = true
@@ -124,7 +124,7 @@ function Contributions() {
             </a>
           ) : (
             <a
-              href="https://leetcode.com/u/anmolsrivastava073"
+              href="https://leetcode.com/u/Anmol_Srivastava073/"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 text-xs font-mono text-zinc-400 hover:text-zinc-100 transition-colors mb-2"
@@ -260,12 +260,43 @@ function Contributions() {
             </div>
           </div>
         ) : (
-          <div className="p-8 rounded-xl bg-[#121215] border border-zinc-800 shadow-lg flex justify-center items-center min-h-[350px]">
-            <img 
-              src="https://leetcard.jacoblin.cool/anmolsrivastava073?theme=dark&font=Inter&ext=activity" 
-              alt="LeetCode Stats for anmolsrivastava073" 
-              className="w-full max-w-3xl rounded-lg shadow-[0_0_15px_rgba(234,179,8,0.1)]"
-            />
+          <div className="p-6 rounded-xl bg-[#121215] border border-zinc-800 shadow-lg">
+            
+            {/* Top Bar for LeetCode */}
+            <div className="flex items-center justify-between gap-4 mb-6 pb-4 border-b border-zinc-800">
+              <div className="text-xs text-zinc-400 font-mono flex items-center gap-2">
+                <SiLeetcode className="text-yellow-500" />
+                <span>LeetCode Activity Heatmap</span>
+              </div>
+              <div className="text-xs text-zinc-500 font-mono">
+                Recent submissions
+              </div>
+            </div>
+
+            {/* CSS Masking for Heatmap only */}
+            <div className="w-full flex justify-center pb-2">
+              <div className="relative w-full max-w-[800px] h-[170px] overflow-hidden rounded-md bg-[#121215]">
+                <img 
+                  src="https://leetcard.jacoblin.cool/Anmol_Srivastava073?theme=dark&font=Inter&ext=heatmap" 
+                  alt="LeetCode Heatmap for Anmol_Srivastava073" 
+                  className="absolute bottom-0 w-full object-cover transform translate-y-[15px] opacity-90"
+                />
+              </div>
+            </div>
+            
+            {/* Legend / Info */}
+            <div className="mt-5 pt-3 border-t border-zinc-800 flex flex-col sm:flex-row items-center justify-between gap-3 text-xs text-zinc-500 font-mono">
+               <span className="text-zinc-500">Live dynamic graph synced with LeetCode profile</span>
+               <a 
+                 href="https://leetcode.com/u/Anmol_Srivastava073/" 
+                 target="_blank" 
+                 rel="noreferrer"
+                 className="text-yellow-500 hover:text-yellow-400 hover:underline transition-colors"
+               >
+                 View full stats &rarr;
+               </a>
+            </div>
+
           </div>
         )}
 
