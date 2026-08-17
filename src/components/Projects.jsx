@@ -132,15 +132,12 @@ function Projects() {
         
         <div className="mb-24 md:flex items-end justify-between pb-8 relative">
           <div className="relative z-10">
-            <div className="text-xs uppercase tracking-widest text-indigo-500 font-mono mb-4">
-              // FEATURED ARCHITECTURE
-            </div>
             <h2 className="text-4xl md:text-6xl lg:text-7xl font-black tracking-tighter text-zinc-100">
-              Selected <br/> Works<span className="text-indigo-500">.</span>
+              Selected Works<span className="text-indigo-500">.</span>
             </h2>
           </div>
           <p className="text-zinc-500 font-mono text-sm max-w-xs mt-6 md:mt-0 text-left md:text-right relative z-10">
-            A curation of systems, interfaces, and algorithms built for scale and impact.
+            A few things I’ve designed and engineered from the ground up.
           </p>
           
           <div className="absolute top-1/2 left-0 -translate-y-1/2 w-48 h-48 bg-indigo-500/10 blur-[100px] rounded-full pointer-events-none" />
