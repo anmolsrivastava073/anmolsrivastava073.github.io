@@ -60,6 +60,13 @@ export const projects = [
     stack: ['React', 'Maps', 'JavaScript'],
   },
   {
+    title: 'Jan-Adhikar',
+    image: '/photos/janadhikar.png',
+    link: 'https://jan-adhikar.vercel.app',
+    desc: 'Autonomous legal drafting platform for Indian citizens with smart RTI filing and statutory grievance assistance.',
+    stack: ['Python','React', 'TypeScript', 'JavaScript'],
+  },
+  {
     title: 'Veritas',
     image: '/photos/s4.png',
     link: 'https://veritas-healthbot.vercel.app/',
