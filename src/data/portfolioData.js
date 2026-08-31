@@ -53,18 +53,18 @@ export const experience = [
 
 export const projects = [
   {
-    title: 'Manipal UniNav',
-    image: '/photos/uninav.png',
-    link: 'https://manipalmap.vercel.app',
-    desc: 'Interactive university navigation platform for Manipal University Jaipur with smart route discovery and location assistance.',
-    stack: ['React', 'Maps', 'JavaScript'],
-  },
-  {
     title: 'Jan-Adhikar',
     image: '/photos/janadhikar.png',
     link: 'https://jan-adhikar.vercel.app',
     desc: 'Autonomous legal drafting platform for Indian citizens with smart RTI filing and statutory grievance assistance.',
     stack: ['Python','React', 'TypeScript', 'JavaScript'],
+  },
+  {
+    title: 'Manipal UniNav',
+    image: '/photos/uninav.png',
+    link: 'https://manipalmap.vercel.app',
+    desc: 'Interactive university navigation platform for Manipal University Jaipur with smart route discovery and location assistance.',
+    stack: ['React', 'Maps', 'JavaScript'],
   },
   {
     title: 'Veritas',
