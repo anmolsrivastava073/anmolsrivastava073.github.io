@@ -106,7 +106,7 @@ function ProjectRow({ project, index }) {
 
             <Magnetic intensity={0.15}>
               <a 
-                href="https://github.com/anmolsrivastava073" 
+                href={project.github} 
                 target="_blank" 
                 rel="noreferrer"
                 className="flex items-center gap-3 text-zinc-400 hover:text-white transition-colors duration-500 px-5 py-3.5 rounded-full border border-transparent hover:border-white/10 hover:bg-white/5"
