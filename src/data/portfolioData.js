@@ -80,11 +80,4 @@ export const projects = [
     desc: 'Smart waste management system focused on sustainability, tracking, and optimized waste collection.',
     stack: ['React', 'Sustainability', 'Dashboard'],
   },
-  {
-    title: 'Personal Portfolio',
-    image: '/photos/s3.png',
-    link: 'https://anmolsrivastava073.github.io/',
-    desc: 'A modern developer portfolio showcasing my projects, technical skills, certifications, experience, and achievements through an interactive, responsive interface with smooth animations and optimized performance.',
-    stack: ['React', 'Tailwind CSS', 'Vite'],
-  },
 ]
