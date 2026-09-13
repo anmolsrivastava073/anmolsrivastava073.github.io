@@ -5,6 +5,7 @@ function Certificates() {
   const [showAll, setShowAll] = useState(false)
 
   const certs = [
+    '/photos/googleaicert.png',
     '/photos/jscert.png',
     '/photos/genai.png',
     '/photos/sqlcert.png',
