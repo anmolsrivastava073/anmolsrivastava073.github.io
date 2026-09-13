@@ -3,13 +3,14 @@ import { motion, AnimatePresence } from 'framer-motion'
 import { FaDownload, FaEye, FaAward, FaXmark } from 'react-icons/fa6'
 
 const certDetails = [
-  { img: '/photos/jscert.png', title: 'JavaScript Specialist', issuer: 'Verified Coursework' },
-  { img: '/photos/genai.png', title: 'Generative AI & LLMs', issuer: 'AI Program' },
-  { img: '/photos/sqlcert.png', title: 'SQL & Relational Databases', issuer: 'Database Systems' },
-  { img: '/photos/pythoncert.png', title: 'Python Programming', issuer: 'Core Python' },
-  { img: '/photos/javacert.png', title: 'Core Java Programming', issuer: 'Java Enterprise' },
-  { img: '/photos/jvcert.png', title: 'Advanced Java Development', issuer: 'Software Engineering' },
-  { img: '/photos/jvoops.png', title: 'Object-Oriented Programming in Java', issuer: 'System Design & OOP' },
+  { img: '/photos/googleaicert.png', title: 'Google AI Professional Certification', issuer: 'Google' },
+  { img: '/photos/jscert.png', title: 'JavaScript Basics', issuer: 'HackerRank' },
+  { img: '/photos/genai.png', title: 'Generative AI & LLMs', issuer: 'Coursera' },
+  { img: '/photos/sqlcert.png', title: 'SQL & Relational Databases', issuer: 'HackerRank' },
+  { img: '/photos/pythoncert.png', title: 'Python Programming', issuer: 'HackerRank' },
+  { img: '/photos/javacert.png', title: 'Core Java Programming', issuer: 'HackerRank' },
+  { img: '/photos/jvcert.png', title: 'Java Development', issuer: 'Heriot Watt University' },
+  { img: '/photos/jvoops.png', title: 'Object-Oriented Programming in Java', issuer: 'Codio' },
 ]
 
 function Resume() {
