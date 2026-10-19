@@ -9,7 +9,7 @@ const TYPING_TITLES = [
   'CS Undergrad @ Manipal University Jaipur'
 ]
 
-function Hero() {
+function Hero({ ready }) {
   const heroRef = useRef(null)
   const [titleIndex, setTitleIndex] = useState(0)
 
@@ -71,10 +71,10 @@ function Hero() {
           {/* Inner motion.div handles the SLOW SIMULTANEOUS fade-in on load */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+            animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ 
-              duration: 3,    // Slow 2-second fade in
-              delay: 1.6,     // Wait almost a second so the background is seen first
+              duration: 1.4,    // Slow 2-second fade in
+              delay: 0.1,     // Wait almost a second so the background is seen first
               ease: 'easeOut'
             }}
             className="w-full flex flex-col items-center"
