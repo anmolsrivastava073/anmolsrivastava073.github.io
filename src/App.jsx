@@ -50,7 +50,7 @@ function App() {
         <Navbar onOpenPalette={() => setPaletteOpen(true)} />
         
         <main className="flex-grow">
-          <Hero />
+          <Hero ready={!loading} />
           <About />
           <Experience />
           <Contributions />
