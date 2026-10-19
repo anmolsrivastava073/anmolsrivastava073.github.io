@@ -12,6 +12,8 @@ import Footer from './components/Footer'
 import AmbientCanvas from './components/AmbientCanvas'
 import CommandPalette from './components/CommandPalette'
 import MacCursor from './components/MacCursor'
+import Preloader from './components/Preloader'
+import { AnimatePresence } from 'framer-motion'
 
 function App() {
   const [paletteOpen, setPaletteOpen] = useState(false)
