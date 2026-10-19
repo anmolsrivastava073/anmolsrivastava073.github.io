@@ -34,6 +34,10 @@ function App() {
   return (
     <>
       <MacCursor />
+
+      <AnimatePresence>
+        {loading && <Preloader onDone={() => setLoading(false)} />}
+      </AnimatePresence>
       <AmbientCanvas />
 
       {/* Quick Search / Command Dialog */}
