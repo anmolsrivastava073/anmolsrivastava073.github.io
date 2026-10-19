@@ -17,6 +17,7 @@ import { AnimatePresence } from 'framer-motion'
 
 function App() {
   const [paletteOpen, setPaletteOpen] = useState(false)
+  const [loading, setLoading] = useState(true)
 
   // Listen for Cmd+K / Ctrl+K
   useEffect(() => {
