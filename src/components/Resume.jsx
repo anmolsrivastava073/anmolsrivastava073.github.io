@@ -4,6 +4,7 @@ import { FaDownload, FaEye, FaAward, FaXmark } from 'react-icons/fa6'
 
 const certDetails = [
   { img: '/photos/googleaicert.png', title: 'Google AI Professional Certification', issuer: 'Google' },
+  { img: '/photos/npteljava.png', title: 'Programming in Java', issuer: 'NPTEL' },
   { img: '/photos/npteldsa.png', title: 'Data Structures Algorithms using Java', issuer: 'NPTEL' },
   { img: '/photos/jscert.png', title: 'JavaScript Basics', issuer: 'HackerRank' },
   { img: '/photos/genai.png', title: 'Generative AI & LLMs', issuer: 'Coursera' },
