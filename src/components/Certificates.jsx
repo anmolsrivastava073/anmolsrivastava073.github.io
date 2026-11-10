@@ -6,6 +6,7 @@ function Certificates() {
 
   const certs = [
     '/photos/googleaicert.png',
+    '/photos/npteljava.png',
     '/photos/npteldsa.png',
     '/photos/jscert.png',
     '/photos/genai.png',
